@@ -9,11 +9,17 @@ public class MaxArea {
         //区域问题, 继续使用双指针来做
         //起始指针和结束指针 start, end, 相向移动
         //比对两者的高度, 以x轴差值(end - start) * Min(y轴)来计算围绕的面积既可
+        //然后开始下一次循环: 谁的高度小谁开始移动
         //当两个指针重合时, 将循环打断既可
         int max = 0;
-        for (int start = 0, end = height.length - 1; start < height.length; start++) {
+        for (int start = 0, end = height.length - 1; start < height.length; ) {
             if(start == end) break;
             max = Math.max(max, (end - start) * Math.min(height[start], height[end]));
+            if(height[start] < height[end]) {
+                start ++;
+            } else {
+                end --;
+            }
         }
         return max;
 
