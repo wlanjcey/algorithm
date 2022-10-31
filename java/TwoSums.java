@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Title_1 {
+public class TwoSums {
 
     public static void main(String[] args) {
         int[] ret = twoSum(new int[]{2, 7, 11, 15}, 9);
